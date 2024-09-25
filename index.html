@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSUNNA Donating App</title>
+    <!-- Tailwind CSS with DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {},
+        },
+        plugins: [daisyui],
+        daisyui: {
+          themes: ["light", "dark"], // Choose DaisyUI theme
+        },
+      };
+    </script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+            <h1 class="text-2xl font-bold text-center mb-6">ASSUNNA Donating App</h1>
+
+            <!-- Donation Form -->
+            <form id="donationForm" class="space-y-4">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Full Name</span>
+                    </label>
+                    <input type="text" id="name" class="input input-bordered w-full" placeholder="Enter your name" required>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Email Address</span>
+                    </label>
+                    <input type="email" id="email" class="input input-bordered w-full" placeholder="Enter your email" required>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Donation Amount ($)</span>
+                    </label>
+                    <input type="number" id="amount" class="input input-bordered w-full" placeholder="Enter donation amount" required min="1">
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Donate Now</button>
+            </form>
+
+            <!-- Thank You Message -->
+            <div id="thankYouMessage" class="hidden mt-6 text-center">
+                <h2 class="text-xl font-bold text-green-600">Thank you for your donation!</h2>
+                <p>Your donation of <span id="donationAmount"></span> USD has been received. May Allah bless you!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
